@@ -377,7 +377,7 @@ define PARSE_KEYMAP
     # Specify the variables that we are passing forward to submake
     MAKE_VARS := KEYBOARD=$$(CURRENT_KB) SUBPROJECT=$$(CURRENT_SP) KEYMAP=$$(CURRENT_KM)
     # And the first part of the make command
-    MAKE_CMD := $$(MAKE) -r -R -C $(ROOT_DIR) -f build_keyboard.mk $$(MAKE_TARGET)
+    MAKE_CMD := "$$(MAKE)" -r -R -C $(ROOT_DIR) -f build_keyboard.mk $$(MAKE_TARGET)
     # The message to display
     MAKE_MSG := $$(MSG_MAKE_KB)
     # We run the command differently, depending on if we want more output or not
@@ -416,7 +416,7 @@ define BUILD_TEST
     TEST_NAME := $1
     MAKE_TARGET := $2
     COMMAND := $1
-    MAKE_CMD := $$(MAKE) -r -R -C $(ROOT_DIR) -f build_test.mk $$(MAKE_TARGET)
+    MAKE_CMD := "$$(MAKE)" -r -R -C $(ROOT_DIR) -f build_test.mk $$(MAKE_TARGET)
     MAKE_VARS := TEST=$$(TEST_NAME)
     MAKE_MSG := $$(MSG_MAKE_TEST)
     $$(eval $$(call BUILD))
