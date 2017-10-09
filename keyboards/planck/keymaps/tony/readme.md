@@ -1,4 +1,4 @@
-# The Default Planck Layout
+Based on the default layout.
 
 ## Reference for make command options
 https://github.com/qmk/qmk_firmware/wiki/FAQ-Build
